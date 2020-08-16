@@ -4,7 +4,7 @@ import 'package:html/dom.dart' as html;
 
 Future<List<String>> getNumber(http.Client client, int round) async {
   final response = await client
-      .get('https://dhlottery.co.kr/gameResult.do?method=byWin&drwNo=+$round');
+      .get('https://dhlottery.co.kr/gameResult.do?method=byWin&drwNo=$round');
   html.Document document = parser.parse(response.body);
   var winNum = document.getElementsByClassName('num win');
   var bonusNum = document.getElementsByClassName('num bonus');
