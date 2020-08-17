@@ -9,7 +9,7 @@ class CircleContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      margin: EdgeInsets.all(2.0),
+      margin: EdgeInsets.symmetric(vertical: 3.0, horizontal: 3.0),
       width: 50.0,
       height: 50.0,
       decoration: BoxDecoration(

@@ -11,6 +11,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int round = 924;
   @override
   void initState() {
     super.initState();
@@ -25,8 +26,21 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         children: [
           Container(
+            margin: EdgeInsets.only(
+              top: 30.0,
+            ),
+            child: Text("$round회차 당첨 결과",
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                )),
+          ),
+          SizedBox(
+            height: 30.0,
+          ),
+          Container(
             child: FutureBuilder<List<String>>(
-              future: getNumber(http.Client(), 924),
+              future: getNumber(http.Client(), round),
               builder: (context, snapshot) {
                 if (snapshot.hasError) print(snapshot.error);
                 return snapshot.hasData
@@ -44,6 +58,34 @@ class _HomeScreenState extends State<HomeScreen> {
                     : Center(child: CircularProgressIndicator());
               },
             ),
+          ),
+          SizedBox(
+            height: 30.0,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              RaisedButton(
+                child: Text(
+                  "이전 회차",
+                ),
+                onPressed: () {
+                  setState(() {
+                    round -= 1;
+                  });
+                },
+              ),
+              RaisedButton(
+                child: Text(
+                  "다음 회차",
+                ),
+                onPressed: () {
+                  setState(() {
+                    round += 1;
+                  });
+                },
+              ),
+            ],
           ),
         ],
       ),
