@@ -11,3 +11,9 @@ Lotto lottery app
 
 ## 2일차
 - 이전회차, 다음회차 버튼 추가
+
+
+
+## HomeScreen
+
+![Simulator Screen Shot - iPhone 11 Pro - 2020-08-17 at 13 51 10](https://user-images.githubusercontent.com/8577080/90358392-d9127780-e090-11ea-9ba3-bffeb1022cce.png)
